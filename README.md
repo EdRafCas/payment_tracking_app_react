@@ -10,4 +10,5 @@ In the project we will need:
 
 ### `web font loader`
 
-### `React router`
+### `React router{BrowserRouter, Route, Switch}`
+### `React Helmet`
