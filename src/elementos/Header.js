@@ -47,3 +47,5 @@ const ContenedorBotones = styled.div`
     justify-content: space-between;
     align-items: center;
 `;
+
+export {Header, Titulo, ContenedorHeader, ContenedorBotones};
