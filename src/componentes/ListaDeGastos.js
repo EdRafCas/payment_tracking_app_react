@@ -12,7 +12,7 @@ const ListaDeGastos = () => {
 
                   <Header>
                         <BtnRegresar />
-                        <Titulo> Lista de Gastos </Titulo>
+                        <Titulo> Lista  </Titulo>
                               
                   </Header>
             </>
