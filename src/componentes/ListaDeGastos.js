@@ -1,4 +1,3 @@
-import react from 'react';
 import {Header, Titulo, ContenedorHeader, ContenedorBotones} from './../elementos/Header';
 import {Helmet} from 'react-helmet';
 import BtnRegresar from '../elementos/BtnRegresar';
@@ -12,7 +11,7 @@ const ListaDeGastos = () => {
 
                   <Header>
                         <BtnRegresar />
-                        <Titulo> Lista  </Titulo>
+                        <Titulo> Lista de gastos  </Titulo>
                               
                   </Header>
             </>
