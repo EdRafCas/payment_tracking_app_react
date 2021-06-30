@@ -12,3 +12,4 @@ In the project we will need:
 
 ### `React router{BrowserRouter, Route, Switch}`
 ### `React Helmet`
+### `Firebase {auth, firestore}`
