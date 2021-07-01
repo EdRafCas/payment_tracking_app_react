@@ -5,6 +5,8 @@ import Boton from './../elementos/Boton';
 import {Formulario, Input, ContenedorBoton} from './../elementos/ElementosDeFormulario';
 import {ReactComponent as SvgLogin} from './../imagenes/registro.svg';
 import styled from 'styled-components';
+import {auth} from '../Firebase/FirebaseConfig';
+import {useHistory} from 'react-router-dom'
 
 const Svg = styled(SvgLogin)`
       width: 100%;
@@ -14,6 +16,7 @@ const Svg = styled(SvgLogin)`
 `;
 
 const RegistroUsuarios = () => {
+      const history = useHistory();
       const[correo, establecerCorreo] = useState('');
       const[password, establecerPassword] = useState('');
       const[password2, establecerPassword2] = useState('');
@@ -34,7 +37,7 @@ const RegistroUsuarios = () => {
             }
       }
 
-      const handleSubmit = (e) =>{
+      const handleSubmit = async (e) =>{
             e.preventDefault();
 
             // comprobamos del lado del cliente que el correo sea valido
@@ -52,10 +55,33 @@ const RegistroUsuarios = () => {
             if(password !== password2) {
                   console.log('Las contraseñas no son iguales');
                   return;
+            }
+
+            try{
+                  await auth.createUserWithEmailAndPassword(correo, password);
+                  history.push('/');
+
+            } catch(error){
+                  let mensaje;
+                  switch(error.code){
+                        case'auth/invalid-password':
+                              mensaje = 'Tu contraseña debe ser de al menos 6 caracteres.'
+                              break;
+                        case 'auth/email-already-in-use':
+                              mensaje = 'Ya existe una cuenta con el correo electrónico proporcionado.'
+                              break;
+                        case 'auth/invalid-email':
+                              mensaje = 'El correo electrónico no es válido.'
+                              break;
+                        default:
+                              mensaje = 'Hubo un error al intentar crear la cuenta.'
+                              break;
+                  }
+                  
+                  console.log(mensaje)
 
             }
 
-            console.log("registramos usuario")
       }
 
 
