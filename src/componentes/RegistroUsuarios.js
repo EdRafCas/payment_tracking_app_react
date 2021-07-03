@@ -18,11 +18,11 @@ const Svg = styled(SvgLogin)`
 
 const RegistroUsuarios = () => {
       const history = useHistory();
-      const[correo, establecerCorreo] = useState('');
-      const[password, establecerPassword] = useState('');
-      const[password2, establecerPassword2] = useState('');
-      const[estadoAlerta, cambiarEstadoAlerta] = useState(false);
-      const[alerta, cambiarAlerta] = useState({});
+      const [correo, establecerCorreo] = useState('');
+      const [password, establecerPassword] = useState('');
+      const [password2, establecerPassword2] = useState('');
+      const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
+      const [alerta, cambiarAlerta] = useState({});
 
       const handleChange = (e) =>{
             switch(e.target.name){
