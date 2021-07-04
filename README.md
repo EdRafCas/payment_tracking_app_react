@@ -10,6 +10,6 @@ In the project we will need:
 
 ### `web font loader`
 
-### `React router{BrowserRouter, Route, Switch}`
+### `React Router{BrowserRouter, Route, Switch, useHistory}`
 ### `React Helmet`
 ### `Firebase {auth, firestore}`
