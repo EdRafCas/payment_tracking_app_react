@@ -12,7 +12,8 @@ import ListaDeGastos from './componentes/ListaDeGastos';
 import RegistroUsuarios from './componentes/RegistroUsuarios';
 import {Helmet} from 'react-helmet';
 import favicon from './imagenes/logo.png';
-import Fondo from './elementos/Fondo'
+import Fondo from './elementos/Fondo';
+import {AuthProvider} from './Contextos/AuthContext';
 
 WebFont.load({
   google: {
@@ -26,19 +27,22 @@ const Index = () => {
       <Helmet>
         <link rel="shortcut icon" href={favicon} type="image/x-icon"/>
       </Helmet>
-      <BrowserRouter>
-        <Contenedor>
-          <Switch>
-            <Route path="/iniciar-sesion" component={InicioSesion} />
-            <Route path="/crear-cuenta" component={RegistroUsuarios} />
-            <Route path="/categorias" component={GastosPorCategoria} />
-            <Route path="/lista" component={ListaDeGastos} />
-            <Route path="/editar/:id" component={EditarGasto} />
-            <Route path="/" component={App} />
-          </Switch>
-        </Contenedor>
-      </BrowserRouter>
-
+      
+      <AuthProvider>
+        <BrowserRouter>
+          <Contenedor>
+            <Switch>
+              <Route path="/iniciar-sesion" component={InicioSesion} />
+              <Route path="/crear-cuenta" component={RegistroUsuarios} />
+              <Route path="/categorias" component={GastosPorCategoria} />
+              <Route path="/lista" component={ListaDeGastos} />
+              <Route path="/editar/:id" component={EditarGasto} />
+              <Route path="/" component={App} />
+            </Switch>
+          </Contenedor>
+        </BrowserRouter>
+      </AuthProvider>
+      
       <Fondo />
     </>
     

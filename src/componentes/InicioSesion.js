@@ -70,6 +70,7 @@ const InicioSesion = () => {
                               break;
                         case 'auth/user-not-found':
                               mensaje = "No se encontró cuenta con ese correo"
+                              break;
                         default:
                               mensaje = 'Hubo un error al intentar crear la cuenta.'
                         break;
