@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import theme from './../theme';
+import IconoCategoria from './../elementos/IconoCategoria';
 import {ReactComponent as IconoDown} from './../imagenes/down.svg'
 
 const ContenedorSelect = styled.div`
@@ -89,6 +90,7 @@ const SelectCategorias = ({categoria, cambiarCategoria}) => {
                                                 data-valor={categoria.id}
                                                 onClick={handleClick}
                                                 >
+                                                <IconoCategoria id={categoria.id} />
                                                 {categoria.texto}
                                           </Opcion>
                               })}
