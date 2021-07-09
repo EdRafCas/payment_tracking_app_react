@@ -13,3 +13,5 @@ In the project we will need:
 ### `React Router{BrowserRouter, Route, Switch, useHistory}`
 ### `React Helmet`
 ### `Firebase {auth, firestore}`
+### `REACT-DAY-PICKER`
+### `DATE-FNS`
