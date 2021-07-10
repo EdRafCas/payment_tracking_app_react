@@ -19,9 +19,14 @@ const FormularioGasto = () => {
             }
       }
 
-      console.log(fecha);
+      const handleSubmit = (e) => {
+            e.preventDefault();
+
+            console.log(inputDescripcion, inputCantidad, categoria, fecha)
+      }
+
       return ( 
-            <Formulario>
+            <Formulario onSubmit={handleSubmit}>
                   <ContenedorFiltros>
                         <SelectCategorias 
                               categoria={categoria}
