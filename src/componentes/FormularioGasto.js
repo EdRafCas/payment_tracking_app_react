@@ -4,12 +4,17 @@ import Boton from './../elementos/Boton';
 import {ReactComponent as IconoPlus} from './../imagenes/plus.svg'
 import SelectCategorias from './SelectCategorias';
 import DatePicker from './DatePicker';
+import getUnixTime from 'date-fns/getUnixTime';
+import fromUnixTime from 'date-fns/fromUnixTime';
+import agregarGasto from '../Firebase/AgregarGasto';
+import {useAuth} from './../Contextos/AuthContext'
 
 const FormularioGasto = () => {
       const [inputDescripcion, cambiarInputDescripcion] = useState('');
       const [inputCantidad, cambiarInputCantidad] = useState('');
       const [categoria, cambiarCategoria] = useState('hogar');
       const [fecha, cambiarFecha] = useState(new Date());
+      const {usuario} = useAuth();
 
       const handleChange = (e) => {
             if(e.target.name === "descripcion"){
@@ -21,8 +26,17 @@ const FormularioGasto = () => {
 
       const handleSubmit = (e) => {
             e.preventDefault();
+            let cantidad = parseFloat(inputCantidad).toFixed(2);
 
-            console.log(inputDescripcion, inputCantidad, categoria, fecha)
+            console.log(usuario.uid)
+
+            agregarGasto({
+                  categoria: categoria,
+                  descripcion: inputDescripcion,
+                  cantidad: cantidad, 
+                  fecha: getUnixTime(fecha),
+                  uidUsuario: usuario.uid
+            });
       }
 
       return ( 
