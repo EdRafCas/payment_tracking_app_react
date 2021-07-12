@@ -26,17 +26,24 @@ const FormularioGasto = () => {
 
       const handleSubmit = (e) => {
             e.preventDefault();
+
+            //Transformamos la cantidad en numeros y le pasamos 2 decimales
             let cantidad = parseFloat(inputCantidad).toFixed(2);
 
-            console.log(usuario.uid)
+            //Comprobamos que haya descripcion y valor (no deben estar vacias)
 
+            if(inputDescripcion !== '' && inputCantidad !== ''){
             agregarGasto({
                   categoria: categoria,
                   descripcion: inputDescripcion,
                   cantidad: cantidad, 
                   fecha: getUnixTime(fecha),
                   uidUsuario: usuario.uid
-            });
+            });  
+            
+            } else {
+                  console.log('Agrega todos los valores')
+            }      
       }
 
       return ( 
