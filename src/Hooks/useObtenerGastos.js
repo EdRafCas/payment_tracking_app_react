@@ -18,8 +18,8 @@ const useObtenerGastos = () => {
                   }));
             });
 
-            return unsuscribe;
-      }, []);
+            return unsuscribe; //al colocar el codigo dentro de una funcion, en este caso unsuscribe, permite desconectarlo al finalizar
+      }, [usuario]); //esto especifica que se ejecuta cuando inicia y tambien cuando cambia el usuario
 
       return [gastos];
 }
