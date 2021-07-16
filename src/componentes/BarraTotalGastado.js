@@ -22,6 +22,7 @@ const BarraTotal = styled.div`
 `;
 const BarraTotalGastado = () => {
       return ( 
+          //Por editar
             <BarraTotal>
                   <p>Total gastado en el mes</p>
                   <p>{convertirAMoneda(1500)}</p>
