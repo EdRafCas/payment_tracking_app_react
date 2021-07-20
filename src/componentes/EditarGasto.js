@@ -1,6 +1,17 @@
 const EditarGasto = () => {
       return ( 
-            <h1>Editar Gasto</h1>
+            <>
+                  <Helmet>
+                        <title>Gastos por categoría</title>
+                  </Helmet>
+
+                  <Header>
+                        <BtnRegresar />
+                        <Titulo>Gastos por categoría</Titulo>
+                              
+                  </Header>
+                  <BarraTotalGastado />
+            </>
       );
 }
  
