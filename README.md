@@ -10,7 +10,7 @@ In the project we will need:
 
 ### `web font loader`
 
-### `React Router{BrowserRouter, Route, Switch, useHistory}`
+### `React Router{BrowserRouter, Route, Switch, useHistory, useParams}`
 ### `React Helmet`
 ### `Firebase {auth, firestore}`
 ### `REACT-DAY-PICKER`
