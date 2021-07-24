@@ -4,7 +4,7 @@ import {startOfMonth, endOfMonth, getUnixTime} from 'date-fns';
 import {useAuth} from './../Contextos/AuthContext'
 
 const useObtenerGastosDelMes = () => {
-      const [gastos, establecerGastos] = useState('');
+      const [gastos, establecerGastos] = useState([]);
       const {usuario} = useAuth();
 
       useEffect(()=>{
@@ -28,7 +28,7 @@ const useObtenerGastosDelMes = () => {
             } 
       }, [usuario])
       
-      return [gastos];
+      return gastos;
 }
  
 export default useObtenerGastosDelMes;
