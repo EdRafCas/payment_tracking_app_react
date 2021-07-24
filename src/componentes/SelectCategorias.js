@@ -20,6 +20,9 @@ const ContenedorSelect = styled.div`
     &:hover {
         background: ${theme.grisClaro2};
     }
+    @media(max-width: 60rem){ /* 950px */
+        width: 100%;
+    }
 `;
  
 const OpcionSeleccionada = styled.div`
